@@ -20,6 +20,10 @@ img
 }
 
 
+ul li img {
+  margin-right: 1em;
+}
+
 #black-btn {
   width: 100px;
   background-color: #000;
