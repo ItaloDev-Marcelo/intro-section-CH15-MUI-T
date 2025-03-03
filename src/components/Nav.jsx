@@ -28,7 +28,7 @@ export default function Nav() {
   };
 
   const DrawerList = (
-    <Box sx={{ width: 160, padding: '1em' }} position='relative'
+    <Box sx={{ width: 250, padding: '1em' }} position='relative'
      role="presentation">
       <Box position='absolute' right='0' paddingRight='1em'>
         <IconButton onClick={toggleDrawer(false)} >
