@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <Stack sx={{padding:{xs:'0',  lg:'5em 7em 0  7em' } ,marginLeft:{lg: '2em'}  }}>
        <Grid container direction={{xs:'column', lg:'row-reverse' }}>
-            <Grid   id='order1'  sx={{position: 'relative', top: '1.4em'}}  size={{xs: 12,lg:6}}>
+            <Grid   id='order1'  sx={{position: 'relative', top: '-.9em'}}  size={{xs: 12,lg:6}}>
             <Stack maxWidth={{xs: '100%',lg: '70%' }} >
            <img src={Mobile} id='mobile' alt='M'/>
            <img src={Desktop} id='desk'  alt='D'/>
