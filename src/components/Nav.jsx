@@ -47,7 +47,7 @@ export default function Nav() {
 
   return (
     <>
-      <AppBar sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', padding: '1em ' }} >
+      <AppBar color='white' sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', padding: '1em ' }} >
         <IconButton>
           <img src={logo} alt='' />
         </IconButton>
