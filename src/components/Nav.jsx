@@ -13,14 +13,7 @@ import BasicMenu from './Drop';
 export default function Nav() {
 
   const [open, setOpen] = useState(false);
-   const [anchorEl, setAnchorEl] = useState(null);
-    const DropOpen = Boolean(anchorEl);
-    const handleClick = (event) => {
-      setAnchorEl(event.currentTarget);
-    };
-    const handleClose = () => {
-      setAnchorEl(null);
-    };
+
   
 
 
@@ -38,6 +31,7 @@ export default function Nav() {
       </Box>
        
 
+      
   
   
     </Box>
@@ -48,11 +42,13 @@ export default function Nav() {
   return (
     <>
       <AppBar color='white' sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', padding: '1em ' }} >
-        <IconButton>
+        <IconButton >
           <img src={logo} alt='' />
         </IconButton>
 
-        <IconButton onClick={toggleDrawer(true)}>
+        <IconButton sx={{display: {
+          md: 'none'
+        }}} onClick={toggleDrawer(true)}>
           <MenuIcon />
         </IconButton>
       </AppBar>

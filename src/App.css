@@ -103,13 +103,18 @@ br {
   }
  
   #order2 p {
-    padding:0 ;
-    padding-right: 4em ;
+    padding:1em 0 ;
+    max-width: 330px;
   }
 
   .row {
-    margin: 2em 0 !important ;
+    margin: 2.2em 0 !important ;
     justify-content: flex-start !important;
+  }
+
+  .row .row-item
+  {
+    margin: 0 .5em;
   }
   
   
