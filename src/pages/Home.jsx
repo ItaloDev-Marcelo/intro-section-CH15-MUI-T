@@ -16,9 +16,9 @@ export default function Home() {
            <img src={Desktop} id='desk'  alt='D'/>
         </Stack>
             </Grid> 
-            <Grid p={'0 1em'} mt={2}  id='order1'  size={{xs: 12,lg:6}} >
+            <Grid p={'0 1em'} mt={3}  id='order1'  size={{xs: 12,lg:6}} >
             <Stack  textAlign={{xs:  'center', lg: 'left'}}>
-           <Typography component='h1' sx={{margin: '1em 0'}} fontWeight={'bold'} fontSize={{xs: '1.5em', md: '1.7em', lg:'2em'}} >Make remote work</Typography>
+           <Typography component='h1' sx={{margin: '2em 0 0 0'}} fontWeight={'bold'} fontSize={{xs: '1.5em', md: '1.7em', lg:'2em'}} >Make remote work</Typography>
            <Typography component='p' sx={{margin: '1em 0'}} >Get your team in sync, no matter your location. Streamline processes, 
            create team rituals, and watch productivity soar.</Typography>
            <Box m={'.5em 0'}>
