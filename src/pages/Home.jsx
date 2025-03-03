@@ -8,17 +8,17 @@ import Mobile from '../assets/images/image-hero-mobile.png'
 import Grid from '@mui/material/Grid2'
 export default function Home() {
   return (
-    <Stack sx={{padding:{xs:'0',  lg:'5em 7em 0  7em' } ,marginLeft:{lg: '2em'}  }}>
+    <Stack sx={{padding:{xs:'0',  lg:'2em 4em 5em  7em' } ,marginLeft:{lg: '2em'}  }}>
        <Grid container direction={{xs:'column', lg:'row-reverse' }}>
-            <Grid   id='order1'  sx={{position: 'relative', top: '-.9em'}}  size={{xs: 12,lg:6}}>
+            <Grid   id='order1'  sx={{position: 'relative', top: '2.9em'}}  size={{xs: 12,lg:6}}>
             <Stack maxWidth={{xs: '100%',lg: '70%' }} >
            <img src={Mobile} id='mobile' alt='M'/>
            <img src={Desktop} id='desk'  alt='D'/>
         </Stack>
             </Grid> 
-            <Grid p={'0 1em'} mt={3}  id='order1'  size={{xs: 12,lg:6}} >
-            <Stack  textAlign={{xs:  'center', lg: 'left'}}>
-           <Typography component='h1' sx={{margin: '2em 0 0 0'}} fontWeight={'bold'} fontSize={{xs: '1.5em', md: '1.7em', lg:'2em'}} >Make remote work</Typography>
+            <Grid p={'0 1em'} mt={3}  id='order2'  size={{xs: 12,lg:6}} >
+            <Stack id='info' textAlign={{xs:  'center', lg: 'left'}}>
+           <Typography component='h1' sx={{margin: '2em 0 0 0'}} fontWeight={'bold'} fontSize={{xs: '2.2em', md: '2.7em', lg:'4em'}} >Make  <br/> remote work</Typography>
            <Typography component='p' sx={{margin: '1em 0'}} >Get your team in sync, no matter your location. Streamline processes, 
            create team rituals, and watch productivity soar.</Typography>
            <Box m={'.5em 0'}>
@@ -30,7 +30,10 @@ export default function Home() {
         },position: 'relative', top: {
          xs:'1em',
          md: '0'
-        }}}  className='row' > 
+        }, justifyContent: {
+         xs: 'center',
+         md: 'flex-start'
+        }}} className='row' > 
            <Box className='row-item'  >
               <img src={Databiz} alt='' />
            </Box>
