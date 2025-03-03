@@ -8,7 +8,7 @@ import Mobile from '../assets/images/image-hero-mobile.png'
 import Grid from '@mui/material/Grid2'
 export default function Home() {
   return (
-    <Stack sx={{padding:{xs:'0',  lg:'3.5em 4em 5em  7em' } ,marginLeft:{lg: '2em'}  }}>
+    <Stack position='absolute' top={'2.2em'} sx={{padding:{xs:'0',  lg:'3.5em 4em 5em  7em' } ,marginLeft:{lg: '2em'}  }}>
        <Grid container direction={{xs:'column', lg:'row-reverse' }}>
             <Grid   id='order1'  sx={{position: 'relative', top: '2.9em'}}  size={{xs: 12,lg:6}}>
             <Stack maxWidth={{xs: '100%',lg: '70%' }} >
