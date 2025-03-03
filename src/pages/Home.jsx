@@ -10,29 +10,37 @@ export default function Home() {
   return (
     <Stack sx={{padding:{xs:'0',  lg:'5em 7em 0  7em' } ,marginLeft:{lg: '2em'}  }}>
        <Grid container direction={{xs:'column', lg:'row-reverse' }}>
-            <Grid   id='order1'    size={{xs: 12,lg:6}}>
+            <Grid   id='order1'  sx={{position: 'relative', top: '1.4em'}}  size={{xs: 12,lg:6}}>
             <Stack maxWidth={{xs: '100%',lg: '70%' }} >
            <img src={Mobile} id='mobile' alt='M'/>
            <img src={Desktop} id='desk'  alt='D'/>
         </Stack>
             </Grid> 
-            <Grid p={2}   id='order1'  size={{xs: 12,lg:6}} >
-            <Stack>
-           <Typography component='h1' >Make remote work</Typography>
-           <Typography component='p'>Get your team in sync, no matter your location. Streamline processes, 
+            <Grid p={'0 1em'} mt={2}  id='order1'  size={{xs: 12,lg:6}} >
+            <Stack  textAlign={{xs:  'center', lg: 'left'}}>
+           <Typography component='h1' sx={{margin: '1em 0'}} fontWeight={'bold'} fontSize={{xs: '1.5em', md: '1.7em', lg:'2em'}} >Make remote work</Typography>
+           <Typography component='p' sx={{margin: '1em 0'}} >Get your team in sync, no matter your location. Streamline processes, 
            create team rituals, and watch productivity soar.</Typography>
-           <Button >Learn More</Button>
-        <Box sx={{display: 'flex'}}> 
-           <Box>
+           <Box m={'.5em 0'}>
+              <Button id='black-btn'>Learn More</Button>
+           </Box>
+        <Box sx={{display: 'flex', margin: {
+         xs: '.4em 0',
+         lg: '0'
+        },position: 'relative', top: {
+         xs:'1em',
+         md: '0'
+        }}}  className='row' > 
+           <Box className='row-item'  >
               <img src={Databiz} alt='' />
            </Box>
-           <Box>
+           <Box className='row-item' >
               <img src={Audiophile} alt='' />
            </Box>
-           <Box>
+           <Box className='row-item' >
               <img src={Meet} alt='' />
            </Box>
-           <Box>
+           <Box className='row-item' >
               <img src={Marker} alt='' />
            </Box>
         </Box>

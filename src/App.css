@@ -15,6 +15,25 @@ img
 
 
 
+.row .row-item img {
+  max-width: 70% !important;
+}
+
+
+#black-btn {
+  width: 100px;
+  background-color: #000;
+  color: #ffff;
+  text-transform: capitalize;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+#black-btn:hover {
+  background-color: #fff;
+  color: #000;
+  outline: 1px solid #000;
+}
    
 
 
