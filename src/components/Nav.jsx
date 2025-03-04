@@ -134,7 +134,7 @@ export default function Nav() {
       <AppBar color='hsl(0, 0%, 98%)' sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between',  padding: {
         xs: '1em ',
         lg: '1em 4em'
-      } }} >
+      }, boxShadow:'none' }} >
       
         <Toolbar sx={{ flexDirection: 'flex-start', justifyContent: 'center'}} >
         <IconButton>
@@ -214,7 +214,7 @@ export default function Nav() {
         <IconButton sx={{display: {
           md: 'none'
         }}} onClick={toggleDrawer(true)}>
-          <MenuIcon />
+           <MenuIcon  fontSize='large' />
         </IconButton>
 
         <Stack display={{xs: 'none', md: 'flex'}} alignItems='center'  direction='row'>

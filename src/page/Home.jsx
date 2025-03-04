@@ -18,7 +18,7 @@ export default function Home() {
             </Grid> 
             <Grid p={'0 1em'} mt={3}  id='order2'  size={{xs: 12,lg:6}} >
             <Stack id='info' textAlign={{xs:  'center', lg: 'left'}}>
-           <Typography component='h1' sx={{margin: '2em 0 0 0'}} fontWeight={'700'} fontSize={{xs: '2.2em', md: '2.7em', lg:'4em'}} >Make  <br/> remote work</Typography>
+           <Typography component='h1' sx={{margin: '2em 0 0 0'}} fontWeight={'700'} fontSize={{xs: '1.9em', md: '2.7em', lg:'4em'}} >Make  <br/> remote work</Typography>
            <Typography component='p' sx={{margin: '1em 0'}} fontWeight={'500'} >Get your team in sync, no matter your location. Streamline processes, 
            create team rituals, and watch productivity soar.</Typography>
            <Box m={'.5em 0'}>
