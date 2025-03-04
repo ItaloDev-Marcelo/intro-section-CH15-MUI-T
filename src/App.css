@@ -1,9 +1,37 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 100%;
+  
+  font-family:  "Epilogue", sans-serif  !important;
+}
 
+
+:root {
+--Almost-White: hsl(0, 0%, 98%);
+--Medium-Gray: hsl(0, 0%, 41%);
+--Almost-Black: hsl(0, 0%, 8%);
+}
+
+body {
+  font-size: 1.125em;
+}
+
+p,li,nav button {
+  color: var(--Medium-Gray) !important;
+}
+
+h1 {
+  color: var(--Almost-Black);
+}
 
 img 
 {
   max-width: 100%;
 }
+
+
 
 #desk{
   display: none !important  ;
@@ -126,13 +154,33 @@ br {
   {
     margin: 0 .5em;
   }
+
+
+  #basic-menu ul li {
+    margin: 0;
+    padding: .5em 2em;
+  }
   
-  
+
+
+  ul li  div span{
+    font-size: .7em !important;
+  }
+
+ 
   
 }
 
-@media (min-width: 1400px)  {
+@media (min-width: 1440px)  {
   #order2 p {
     max-width: 400px !important;
   }
+
+  #Home {
+    padding-top: 4em !important;
+  }
+
+ 
+
+
 }

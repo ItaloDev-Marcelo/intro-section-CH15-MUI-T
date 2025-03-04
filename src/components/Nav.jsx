@@ -54,7 +54,7 @@ export default function Nav() {
   };
 
   const DrawerList = (
-    <Box sx={{ width: 250, padding: '1em' }} position='relative'
+    <Box sx={{ width: 250, padding: '1em'}} position='relative'
      role="presentation">
       <Box position='absolute' right='0' paddingRight='1em'>
         <IconButton onClick={toggleDrawer(false)} >
@@ -63,8 +63,9 @@ export default function Nav() {
       </Box>
        
       <Stack sx={{marginTop: '5em'}} >
-      <Box>
-         <Button id='dropdown1' aria-controls={drop1 ? 'dropdown1' : undefined} aria-haspopup='true' aria-expanded={drop1 ? 'true' : undefined} className='pop' onClick={() => setDrop1(!drop1)} endIcon={drop1 ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon/>}>Features  </Button>
+      <Box 
+       >
+         <Button sx={{textTransform: 'capitalize', color: '#000' }} id='dropdown1' aria-controls={drop1 ? 'dropdown1' : undefined} aria-haspopup='true' aria-expanded={drop1 ? 'true' : undefined} className='pop' onClick={() => setDrop1(!drop1)} endIcon={drop1 ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon/>}>Features  </Button>
          <List  style={{display: drop1? 'block' : 'none'}} id='dropdown-content' aria-labelledby='dropdown1' >
             <ListItem>
                <img src={Todo} alt="" />
@@ -85,9 +86,11 @@ export default function Nav() {
          </List>
       </Box>
 
-      <Box>
-         <Button  id='dropdown2' aria-controls={drop2 ? 'dropdown2' : undefined} aria-haspopup='true' aria-expanded={drop2 ? 'true' : undefined}   className='pop' onClick={() => setDrop2(!drop2)}  endIcon={drop2 ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon/>}>Company  </Button>
-         <List id='dropdown-content2' aria-labelledby='dropdown2' style={{display: drop2? 'block' : 'none'}}>
+      <Box 
+        
+        >
+         <Button sx={{textTransform: 'capitalize', color: '#000' }}  id='dropdown2' aria-controls={drop2 ? 'dropdown2' : undefined} aria-haspopup='true' aria-expanded={drop2 ? 'true' : undefined}   className='pop' onClick={() => setDrop2(!drop2)}  endIcon={drop2 ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon/>}>Company  </Button>
+         <List  id='dropdown-content2' aria-labelledby='dropdown2' style={{display: drop2? 'block' : 'none'}}>
             <ListItem>
                   <ListItemText>History</ListItemText>
             </ListItem>
@@ -101,7 +104,7 @@ export default function Nav() {
          </List>
       </Box>
       
-      <List >
+      <List  >
          <ListItem>
             <ListItemText>Carrers</ListItemText>
          </ListItem>
@@ -111,8 +114,8 @@ export default function Nav() {
       </List>
 
        <Stack  direction='column'>
-       <Button variant='text' sx={{marginBottom: '1em '}} >Login</Button>
-       <Button  variant='outlined' sx={{borderRadius: '25px'}}>Register</Button>
+       <Button variant='text' sx={{marginBottom: '1em ', color: '#000'}} >Login</Button>
+       <Button  variant='outlined' sx={{borderRadius: '10px', color: '#000', borderColor: '#000'}}>Register</Button>
        </Stack>
       </Stack>
   
@@ -124,9 +127,12 @@ export default function Nav() {
 
   return (
     <>
-      <AppBar color='white' sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', padding: '1em ' }} >
+      <AppBar color='hsl(0, 0%, 98%)' sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between',  padding: {
+        xs: '1em ',
+        lg: '1em 4em'
+      } }} >
       
-        <Toolbar sx={{display: {xs: 'none', md: 'flex'}, flexDirection: 'flex-start', justifyContent: 'center'}} >
+        <Toolbar sx={{ flexDirection: 'flex-start', justifyContent: 'center'}} >
         <IconButton >
           <img src={logo} alt='' />
         </IconButton>
@@ -146,7 +152,7 @@ export default function Nav() {
       >
         Features
       </Button>
-      <Menu
+      <Menu sx={{position: 'absolute', top: '2em', left: '-4em'}}
         id="basic-menu"
         anchorEl={anchorEl}
         open={openEl}
@@ -169,7 +175,7 @@ export default function Nav() {
       
         variant='text'
         id="basic-button"
-        aria-controls={openEl1 ? 'basic-menu' : undefined}
+        aria-controls={openEl1 ? 'basic-menu1' : undefined}
         aria-haspopup="true"
         aria-expanded={openEl1 ? 'true' : undefined}
         onClick={handleClick1}
@@ -179,8 +185,8 @@ export default function Nav() {
       >
         Dashboard
       </Button>
-      <Menu
-        id="basic-menu"
+      <Menu  sx={{position: 'absolute', top: '2em'}}
+        id="basic-menu1"
         anchorEl={anchorEl1}
         open={openEl1}
         onClose={handleClose1}
@@ -196,8 +202,8 @@ export default function Nav() {
 
       
       <List sx={{display: {xs: 'none', md: 'flex'}}} >
-         <ListItem>
-            <ListItemText>Carrers</ListItemText>
+         <ListItem >
+            <ListItemText >Carrers</ListItemText>
          </ListItem>
          <ListItem>
             <ListItemText>About</ListItemText>

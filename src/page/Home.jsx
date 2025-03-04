@@ -8,8 +8,8 @@ import Mobile from '../assets/images/image-hero-mobile.png'
 import Grid from '@mui/material/Grid2'
 export default function Home() {
   return (
-    <Stack position='absolute' top={'2.2em'} sx={{padding:{xs:'0',  lg:'3.5em 4em 5em  7em' } ,marginLeft:{lg: '2em'}  }}>
-       <Grid container direction={{xs:'column', lg:'row-reverse' }}>
+    <Stack position='absolute' top={'3.2em'} sx={{padding:{xs:'0',  lg:'4em 1em 5em  10em' } ,marginLeft:{lg: '2em'}  }}>
+       <Grid container id='Home' direction={{xs:'column', lg:'row-reverse' }} pt={{lg: '1em'}}  className='Home'>
             <Grid   id='order1'  sx={{position: 'relative', top: '2.9em'}}  size={{xs: 12,lg:6}}>
             <Stack maxWidth={{xs: '100%',lg: '70%' }} >
            <img src={Mobile} id='mobile' alt='M'/>
@@ -18,8 +18,8 @@ export default function Home() {
             </Grid> 
             <Grid p={'0 1em'} mt={3}  id='order2'  size={{xs: 12,lg:6}} >
             <Stack id='info' textAlign={{xs:  'center', lg: 'left'}}>
-           <Typography component='h1' sx={{margin: '2em 0 0 0'}} fontWeight={'bold'} fontSize={{xs: '2.2em', md: '2.7em', lg:'4em'}} >Make  <br/> remote work</Typography>
-           <Typography component='p' sx={{margin: '1em 0'}} >Get your team in sync, no matter your location. Streamline processes, 
+           <Typography component='h1' sx={{margin: '2em 0 0 0'}} fontWeight={'700'} fontSize={{xs: '2.2em', md: '2.7em', lg:'4em'}} >Make  <br/> remote work</Typography>
+           <Typography component='p' sx={{margin: '1em 0'}} fontWeight={'500'} >Get your team in sync, no matter your location. Streamline processes, 
            create team rituals, and watch productivity soar.</Typography>
            <Box m={'.5em 0'}>
               <Button id='black-btn'>Learn More</Button>
@@ -49,9 +49,7 @@ export default function Home() {
         </Box>
         </Stack>
             </Grid> 
-        </Grid>     
-        
-        
+        </Grid>        
     </Stack>
   )
 }
