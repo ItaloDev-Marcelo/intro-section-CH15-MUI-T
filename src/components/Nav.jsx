@@ -63,9 +63,9 @@ export default function Nav() {
       </Box>
        
       <Stack sx={{marginTop: '5em'}} >
-      <Box 
+      <Box  sx={{margin: '.2em 0 '}}
        >
-         <Button sx={{textTransform: 'capitalize', color: '#000' }} id='dropdown1' aria-controls={drop1 ? 'dropdown1' : undefined} aria-haspopup='true' aria-expanded={drop1 ? 'true' : undefined} className='pop' onClick={() => setDrop1(!drop1)} endIcon={drop1 ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon/>}>Features  </Button>
+         <Button sx={{textTransform: 'capitalize', color: ' hsl(0, 0%, 41%)' }} id='dropdown1' aria-controls={drop1 ? 'dropdown1' : undefined} aria-haspopup='true' aria-expanded={drop1 ? 'true' : undefined} className='pop' onClick={() => setDrop1(!drop1)} endIcon={drop1 ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon/>}>Features  </Button>
          <List  style={{display: drop1? 'block' : 'none'}} id='dropdown-content' aria-labelledby='dropdown1' >
             <ListItem>
                <img src={Todo} alt="" />
@@ -89,7 +89,7 @@ export default function Nav() {
       <Box 
         
         >
-         <Button sx={{textTransform: 'capitalize', color: '#000' }}  id='dropdown2' aria-controls={drop2 ? 'dropdown2' : undefined} aria-haspopup='true' aria-expanded={drop2 ? 'true' : undefined}   className='pop' onClick={() => setDrop2(!drop2)}  endIcon={drop2 ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon/>}>Company  </Button>
+         <Button sx={{textTransform: 'capitalize', color: ' hsl(0, 0%, 41%)' }}  id='dropdown2' aria-controls={drop2 ? 'dropdown2' : undefined} aria-haspopup='true' aria-expanded={drop2 ? 'true' : undefined}   className='pop' onClick={() => setDrop2(!drop2)}  endIcon={drop2 ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon/>}>Company  </Button>
          <List  id='dropdown-content2' aria-labelledby='dropdown2' style={{display: drop2? 'block' : 'none'}}>
             <ListItem>
                   <ListItemText>History</ListItemText>
@@ -104,7 +104,7 @@ export default function Nav() {
          </List>
       </Box>
       
-      <List  >
+      <List id='container-list' >
          <ListItem>
             <ListItemText>Carrers</ListItemText>
          </ListItem>
@@ -113,9 +113,13 @@ export default function Nav() {
          </ListItem>
       </List>
 
+
        <Stack  direction='column'>
-       <Button variant='text' sx={{marginBottom: '1em ', color: '#000'}} >Login</Button>
-       <Button  variant='outlined' sx={{borderRadius: '10px', color: '#000', borderColor: '#000'}}>Register</Button>
+       <Button variant='text' sx={{marginBottom: '1em ', color: ' hsl(0, 0%, 41%)'}} >Login</Button>
+       <Button  variant='outlined' sx={{borderRadius: '10px', color: ' hsl(0, 0%, 41%)', borderColor: ' hsl(0, 0%, 41%)','&:hover':{
+          background:'#000',
+          color:'#fff'  
+       }  }}>Register</Button>
        </Stack>
       </Stack>
   
@@ -133,12 +137,12 @@ export default function Nav() {
       } }} >
       
         <Toolbar sx={{ flexDirection: 'flex-start', justifyContent: 'center'}} >
-        <IconButton >
+        <IconButton>
           <img src={logo} alt='' />
         </IconButton>
         <Box className='nav-container' sx={{display: {xs: 'none', md: 'flex', marginLeft: '1.2em'}}} >
         
-        <Box sx={{ position: 'relative', top: '1em ', marginRight: '.5em'}}>
+        <Box sx={{ position: 'relative', top: '0', marginRight: '.5em'}}>
       <Button
         variant='text'
         id="basic-button"
@@ -170,7 +174,7 @@ export default function Nav() {
       </Menu>
         </Box>
 
-        <Box sx={{ position: 'relative', top: '1em ',  marginRight: '.5em'}}>
+        <Box sx={{ position: 'relative', top: '0em ',  marginRight: '.5em'}}>
       <Button
       
         variant='text'
@@ -199,16 +203,10 @@ export default function Nav() {
         <MenuItem onClick={handleClose}>Logout</MenuItem>
       </Menu>
         </Box>
-
-      
-      <List sx={{display: {xs: 'none', md: 'flex'}}} >
-         <ListItem >
-            <ListItemText >Carrers</ListItemText>
-         </ListItem>
-         <ListItem>
-            <ListItemText>About</ListItemText>
-         </ListItem>
-      </List>
+        <Stack display={{xs: 'none', md: 'flex'}}   direction='row'>
+                   <Button variant='text'sx={{textTransform: 'capitalize',color: 'hsl(0, 0%, 41%)' }}  >Carrers</Button>     
+                   <Button variant='text' sx={{textTransform: 'capitalize',color: 'hsl(0, 0%, 41%)' }}>About</Button>                                      
+        </Stack>  
         </Box>
        
         </Toolbar>
@@ -220,8 +218,11 @@ export default function Nav() {
         </IconButton>
 
         <Stack display={{xs: 'none', md: 'flex'}} alignItems='center'  direction='row'>
-       <Button variant='text' color='#000' >Login</Button>
-       <Button  variant='outlined' color='#000' sx={{borderRadius: '10px'}}>Register</Button>
+       <Button variant='text' sx={{textTransform: 'capitalize',color: 'hsl(0, 0%, 41%)' }}    >Login</Button>
+       <Button  variant='outlined'  sx={{borderRadius: '10px',textTransform: 'capitalize',color: 'hsl(0, 0%, 41%)',borderColor:'hsl(0, 0%, 41%)','&:hover':{
+          background:'#000',
+          color:"#fff" 
+       }   }}>Register</Button>
        </Stack>
       </AppBar>
 

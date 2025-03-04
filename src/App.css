@@ -33,6 +33,15 @@ img
 
 
 
+
+#container-list li div  span   {
+  font-size: .7em !important ;
+  margin-left: -.5em;
+    
+}
+
+
+
 #desk{
   display: none !important  ;
 } 
@@ -161,12 +170,6 @@ br {
     padding: .5em 2em;
   }
   
-
-
-  ul li  div span{
-    font-size: .7em !important;
-  }
-
  
   
 }
