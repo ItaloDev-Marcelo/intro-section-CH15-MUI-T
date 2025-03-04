@@ -1,4 +1,4 @@
-import { Stack, AppBar, Toolbar, Button, IconButton, Drawer, Box, List, ListItem, ListItemText, ListItemIcon,   } from '@mui/material';
+import { Stack, AppBar, Toolbar, Button, IconButton, Drawer, Box, List, ListItem, ListItemText  } from '@mui/material';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import MenuIcon from '@mui/icons-material/Menu'
@@ -11,6 +11,9 @@ import Planning from '../assets/images/icon-planning.svg';
 import Reminders from '../assets/images/icon-reminders.svg';
 
 
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
+
 export default function Nav() {
 
   const [open, setOpen] = useState(false);
@@ -19,8 +22,31 @@ export default function Nav() {
 
   const [drop2, setDrop2]  = useState(false)
 
+  const [anchorEl, setAnchorEl] = useState(null);
+  const openEl = Boolean(anchorEl);
 
-  
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
+
+  const [anchorEl1, setAnchorEl1] = useState(null);
+  const openEl1 = Boolean(anchorEl1);
+
+  const handleClick1 = (event) => {
+    setAnchorEl1(event.currentTarget);
+  };
+  const handleClose1 = () => {
+    setAnchorEl1(null);
+  };
+
+
+  // leia isso vc deve arummar a 
+  // parte da acessibilidade leia o arquivo
+  //  MUI sobre o component Menu para entender
 
 
   const toggleDrawer = (newOpen) => () => {
@@ -38,8 +64,8 @@ export default function Nav() {
        
       <Stack sx={{marginTop: '5em'}} >
       <Box>
-         <Button className='pop' onClick={() => setDrop1(!drop1)} endIcon={drop1 ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon/>}>Features  </Button>
-         <List style={{display: drop1? 'block' : 'none'}} >
+         <Button id='dropdown1' aria-controls={drop1 ? 'dropdown1' : undefined} aria-haspopup='true' aria-expanded={drop1 ? 'true' : undefined} className='pop' onClick={() => setDrop1(!drop1)} endIcon={drop1 ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon/>}>Features  </Button>
+         <List  style={{display: drop1? 'block' : 'none'}} id='dropdown-content' aria-labelledby='dropdown1' >
             <ListItem>
                <img src={Todo} alt="" />
                   <ListItemText>Todo List</ListItemText>
@@ -60,8 +86,8 @@ export default function Nav() {
       </Box>
 
       <Box>
-         <Button className='pop' onClick={() => setDrop2(!drop2)}  endIcon={drop1 ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon/>}>Company  </Button>
-         <List style={{display: drop2? 'block' : 'none'}}>
+         <Button  id='dropdown2' aria-controls={drop2 ? 'dropdown2' : undefined} aria-haspopup='true' aria-expanded={drop2 ? 'true' : undefined}   className='pop' onClick={() => setDrop2(!drop2)}  endIcon={drop2 ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon/>}>Company  </Button>
+         <List id='dropdown-content2' aria-labelledby='dropdown2' style={{display: drop2? 'block' : 'none'}}>
             <ListItem>
                   <ListItemText>History</ListItemText>
             </ListItem>
@@ -99,15 +125,98 @@ export default function Nav() {
   return (
     <>
       <AppBar color='white' sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', padding: '1em ' }} >
+      
+        <Toolbar sx={{display: {xs: 'none', md: 'flex'}, flexDirection: 'flex-start', justifyContent: 'center'}} >
         <IconButton >
           <img src={logo} alt='' />
         </IconButton>
+        <Box className='nav-container' sx={{display: {xs: 'none', md: 'flex', marginLeft: '1.2em'}}} >
+        
+        <Box sx={{ position: 'relative', top: '1em ', marginRight: '.5em'}}>
+      <Button
+        variant='text'
+        id="basic-button"
+        aria-controls={openEl ? 'basic-menu' : undefined}
+        aria-haspopup="true"
+        aria-expanded={openEl ? 'true' : undefined}
+        onClick={handleClick}
+        color='#000' 
+        sx={{textTransform: 'capitalize'}}
+        endIcon={openEl ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon/>}
+      >
+        Features
+      </Button>
+      <Menu
+        id="basic-menu"
+        anchorEl={anchorEl}
+        open={openEl}
+        onClose={handleClose}
+        color='#000' 
+        
+        MenuListProps={{
+          'aria-labelledby': 'basic-button',
+        }}
+      >
+        <MenuItem  onClick={handleClose}><img src={Todo} alt="" /> <p>Todo List</p></MenuItem>
+        <MenuItem onClick={handleClose}><img src={Calender} alt="" /> <p>Calendar</p></MenuItem>
+        <MenuItem onClick={handleClose}><img src={Reminders} alt="" /> <p>Reminders</p> </MenuItem>
+        <MenuItem onClick={handleClose}><img src={Planning} alt="" /> <p>Planning</p></MenuItem>
+      </Menu>
+        </Box>
+
+        <Box sx={{ position: 'relative', top: '1em ',  marginRight: '.5em'}}>
+      <Button
+      
+        variant='text'
+        id="basic-button"
+        aria-controls={openEl1 ? 'basic-menu' : undefined}
+        aria-haspopup="true"
+        aria-expanded={openEl1 ? 'true' : undefined}
+        onClick={handleClick1}
+        color='#000' 
+        sx={{textTransform: 'capitalize'}}
+        endIcon={openEl1 ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon/>}
+      >
+        Dashboard
+      </Button>
+      <Menu
+        id="basic-menu"
+        anchorEl={anchorEl1}
+        open={openEl1}
+        onClose={handleClose1}
+        MenuListProps={{
+          'aria-labelledby': 'basic-button',
+        }}
+      >
+        <MenuItem onClick={handleClose}>Profile</MenuItem>
+        <MenuItem onClick={handleClose}>My account</MenuItem>
+        <MenuItem onClick={handleClose}>Logout</MenuItem>
+      </Menu>
+        </Box>
+
+      
+      <List sx={{display: {xs: 'none', md: 'flex'}}} >
+         <ListItem>
+            <ListItemText>Carrers</ListItemText>
+         </ListItem>
+         <ListItem>
+            <ListItemText>About</ListItemText>
+         </ListItem>
+      </List>
+        </Box>
+       
+        </Toolbar>
 
         <IconButton sx={{display: {
           md: 'none'
         }}} onClick={toggleDrawer(true)}>
           <MenuIcon />
         </IconButton>
+
+        <Stack display={{xs: 'none', md: 'flex'}} alignItems='center'  direction='row'>
+       <Button variant='text' color='#000' >Login</Button>
+       <Button  variant='outlined' color='#000' sx={{borderRadius: '10px'}}>Register</Button>
+       </Stack>
       </AppBar>
 
       <div>
