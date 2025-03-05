@@ -121,6 +121,12 @@ br {
 
 @media (min-width: 1200px) {
 
+  #Home {
+    position: relative;
+    top: -.5em;
+    padding-top: 1em !important;
+  }
+
   body {
    overflow: hidden;
   }
@@ -181,6 +187,8 @@ br {
 
   #Home {
     padding-top: 4em !important;
+    
+    top:0;
   }
 
  

@@ -65,7 +65,9 @@ export default function Nav() {
       <Stack sx={{marginTop: '5em'}} >
       <Box  sx={{margin: '.2em 0 '}}
        >
-         <Button sx={{textTransform: 'capitalize', color: ' hsl(0, 0%, 41%)' }} id='dropdown1' aria-controls={drop1 ? 'dropdown1' : undefined} aria-haspopup='true' aria-expanded={drop1 ? 'true' : undefined} className='pop' onClick={() => setDrop1(!drop1)} endIcon={drop1 ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon/>}>Features  </Button>
+         <Button sx={{textTransform: 'capitalize', color: ' hsl(0, 0%, 41%)', '&:hover': {
+          color: '#000'
+         } }} id='dropdown1' aria-controls={drop1 ? 'dropdown1' : undefined} aria-haspopup='true' aria-expanded={drop1 ? 'true' : undefined} className='pop' onClick={() => setDrop1(!drop1)} endIcon={drop1 ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon/>}>Features  </Button>
          <List  style={{display: drop1? 'block' : 'none'}} id='dropdown-content' aria-labelledby='dropdown1' >
             <ListItem>
                <img src={Todo} alt="" />
@@ -89,10 +91,12 @@ export default function Nav() {
       <Box 
         
         >
-         <Button sx={{textTransform: 'capitalize', color: ' hsl(0, 0%, 41%)' }}  id='dropdown2' aria-controls={drop2 ? 'dropdown2' : undefined} aria-haspopup='true' aria-expanded={drop2 ? 'true' : undefined}   className='pop' onClick={() => setDrop2(!drop2)}  endIcon={drop2 ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon/>}>Company  </Button>
-         <List  id='dropdown-content2' aria-labelledby='dropdown2' style={{display: drop2? 'block' : 'none'}}>
-            <ListItem>
-                  <ListItemText>History</ListItemText>
+         <Button sx={{textTransform: 'capitalize', color: ' hsl(0, 0%, 41%)', '&:hover': {
+          color: '#000'
+         } }}  id='dropdown2' aria-controls={drop2 ? 'dropdown2' : undefined} aria-haspopup='true' aria-expanded={drop2 ? 'true' : undefined}   className='pop' onClick={() => setDrop2(!drop2)}  endIcon={drop2 ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon/>}>Company  </Button>
+         <List id='dropdown-content2' aria-labelledby='dropdown2' style={{display: drop2? 'block' : 'none'}}>
+            <ListItem  >
+                  <ListItemText >History</ListItemText>
             </ListItem>
             <ListItem>
                   <ListItemText>Our Team</ListItemText>
@@ -115,7 +119,9 @@ export default function Nav() {
 
 
        <Stack  direction='column'>
-       <Button variant='text' sx={{marginBottom: '1em ', color: ' hsl(0, 0%, 41%)'}} >Login</Button>
+       <Button variant='text' sx={{marginBottom: '1em ', color: ' hsl(0, 0%, 41%)', '&:hover': {
+          color: '#000'
+         } }} >Login</Button>
        <Button  variant='outlined' sx={{borderRadius: '10px', color: ' hsl(0, 0%, 41%)', borderColor: ' hsl(0, 0%, 41%)','&:hover':{
           background:'#000',
           color:'#fff'  
@@ -131,7 +137,7 @@ export default function Nav() {
 
   return (
     <>
-      <AppBar color='hsl(0, 0%, 98%)' sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between',  padding: {
+      <AppBar position='fixed'  color='hsl(0, 0%, 98%)' sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between',  padding: {
         xs: '1em .5em ',
         lg: '1em 4em'
       }, boxShadow:'none' }} >
@@ -150,8 +156,9 @@ export default function Nav() {
         aria-haspopup="true"
         aria-expanded={openEl ? 'true' : undefined}
         onClick={handleClick}
-        color='#000' 
-        sx={{textTransform: 'capitalize'}}
+        sx={{textTransform: 'capitalize', color: 'hsl(0, 0%, 41%)',  '&:hover': {
+          color: '#000'
+        }}}
         endIcon={openEl ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon/>}
       >
         Features
@@ -183,8 +190,9 @@ export default function Nav() {
         aria-haspopup="true"
         aria-expanded={openEl1 ? 'true' : undefined}
         onClick={handleClick1}
-        color='#000' 
-        sx={{textTransform: 'capitalize'}}
+        sx={{textTransform: 'capitalize', color: 'hsl(0, 0%, 41%)',  '&:hover': {
+          color: '#000'
+        }}}
         endIcon={openEl1 ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon/>}
       >
         Dashboard
@@ -198,14 +206,18 @@ export default function Nav() {
           'aria-labelledby': 'basic-button',
         }}
       >
-        <MenuItem onClick={handleClose}>Profile</MenuItem>
-        <MenuItem onClick={handleClose}>My account</MenuItem>
-        <MenuItem onClick={handleClose}>Logout</MenuItem>
+        <MenuItem onClick={handleClose}>History</MenuItem>
+        <MenuItem onClick={handleClose}>Our Team</MenuItem>
+        <MenuItem onClick={handleClose}>Blog</MenuItem>
       </Menu>
         </Box>
         <Stack display={{xs: 'none', md: 'flex'}}   direction='row'>
-                   <Button variant='text'sx={{textTransform: 'capitalize',color: 'hsl(0, 0%, 41%)' }}  >Carrers</Button>     
-                   <Button variant='text' sx={{textTransform: 'capitalize',color: 'hsl(0, 0%, 41%)' }}>About</Button>                                      
+                   <Button variant='text'sx={{textTransform: 'capitalize',color: 'hsl(0, 0%, 41%)', '&:hover': {
+                    color: '#000'
+                   }}}  >Carrers</Button>     
+                   <Button variant='text' sx={{textTransform: 'capitalize',color: 'hsl(0, 0%, 41%)','&:hover': {
+                    color: '#000'
+                   } }}>About</Button>                                      
         </Stack>  
         </Box>
        
@@ -218,7 +230,9 @@ export default function Nav() {
         </IconButton>
 
         <Stack display={{xs: 'none', md: 'flex'}} alignItems='center'  direction='row'>
-       <Button variant='text' sx={{textTransform: 'capitalize',color: 'hsl(0, 0%, 41%)' }}    >Login</Button>
+       <Button variant='text' sx={{textTransform: 'capitalize',color: 'hsl(0, 0%, 41%)', '&:hover': {
+                    color: '#000'
+                   } }}    >Login</Button>
        <Button  variant='outlined'  sx={{borderRadius: '10px',textTransform: 'capitalize',color: 'hsl(0, 0%, 41%)',borderColor:'hsl(0, 0%, 41%)','&:hover':{
           background:'#000',
           color:"#fff" 
